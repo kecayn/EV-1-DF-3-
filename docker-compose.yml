@@ -111,7 +111,7 @@ services:
     restart: unless-stopped
     environment:
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-service:8761/eureka/
-      - JWT_SECRET=SmartLogixSuperSecretKeyForJWTTokenGeneration2024ChangeInProduction
+      - JWT_SECRET=${JWT_SECRET:-SmartLogixSuperSecretKeyForJWTTokenGeneration2024ChangeInProduction}
     healthcheck:
       test: ["CMD", "curl", "-fsS", "http://localhost:8085/actuator/health"]
       interval: 15s

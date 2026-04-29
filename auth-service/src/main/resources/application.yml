@@ -17,5 +17,5 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 
 jwt:
-  secret: SmartLogixSuperSecretKeyForJWTTokenGeneration2024ChangeInProduction
-  expiration-ms: 3600000
+  secret: ${JWT_SECRET:SmartLogixSuperSecretKeyForJWTTokenGeneration2024ChangeInProduction}
+  expiration-ms: ${JWT_EXPIRATION_MS:3600000}
