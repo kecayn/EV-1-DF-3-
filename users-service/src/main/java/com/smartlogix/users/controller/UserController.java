@@ -56,7 +56,7 @@ public class UserController {
     }
 
     @PostMapping("/internal/check-credentials")
-    public CredentialCheckResponse checkCredentials(@RequestBody CredentialCheckRequest request) {
+    public CredentialCheckResponse checkCredentials(@Valid @RequestBody CredentialCheckRequest request) {
         return userService.checkCredentials(request);
     }
 }

@@ -1,8 +1,13 @@
 package com.smartlogix.users.dto;
 
+import jakarta.validation.constraints.NotBlank;
+
 public class CredentialCheckRequest {
 
+    @NotBlank(message = "Username is required")
     private String username;
+
+    @NotBlank(message = "Password is required")
     private String rawPassword;
 
     public String getUsername() { return username; }

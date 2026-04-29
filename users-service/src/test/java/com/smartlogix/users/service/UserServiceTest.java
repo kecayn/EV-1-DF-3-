@@ -111,4 +111,18 @@ class UserServiceTest {
 
         assertThat(response.isValid()).isFalse();
     }
+
+    @Test
+    void checkCredentials_returnsInvalidForUnknownUsername() {
+        when(userRepository.findByUsername("unknown")).thenReturn(Optional.empty());
+
+        CredentialCheckRequest req = new CredentialCheckRequest();
+        req.setUsername("unknown");
+        req.setRawPassword("anypassword");
+
+        CredentialCheckResponse response = userService.checkCredentials(req);
+
+        assertThat(response.isValid()).isFalse();
+        assertThat(response.getUserId()).isNull();
+    }
 }
