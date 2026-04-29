@@ -140,6 +140,10 @@ services:
       auth-service:
         condition: service_healthy
     restart: unless-stopped
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-service:8761/eureka/
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8080/actuator/health"]
       interval: 15s
       timeout: 5s
       retries: 10
