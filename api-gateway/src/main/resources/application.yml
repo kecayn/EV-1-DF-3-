@@ -19,6 +19,14 @@ spring:
           uri: lb://shipment-service
           predicates:
             - Path=/api/shipments/**
+        - id: users-service
+          uri: lb://users-service
+          predicates:
+            - Path=/api/users/**
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/api/auth/**
       globalcors:
         cors-configurations:
           '[/**]':
