@@ -16,7 +16,7 @@ public class UsersServiceClient {
     private final WebClient webClient;
 
     public UsersServiceClient(WebClient.Builder webClientBuilder) {
-        this.webClient = webClientBuilder.baseUrl("http://users-service").build();
+        this.webClient = webClientBuilder.baseUrl("lb://users-service").build();
     }
 
     public CredentialCheckResponse checkCredentials(String username, String rawPassword) {
