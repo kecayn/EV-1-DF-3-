@@ -76,7 +76,7 @@ services:
       retries: 10
       start_period: 40s
     ports:
-      - "8082:8082"
+      - "8092:8082"
 
   users-service:
     build:
