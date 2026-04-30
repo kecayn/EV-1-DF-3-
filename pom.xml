@@ -16,6 +16,8 @@
         <module>inventory-service</module>
         <module>order-service</module>
         <module>shipment-service</module>
+        <module>users-service</module>
+        <module>auth-service</module>
     </modules>
 
     <properties>

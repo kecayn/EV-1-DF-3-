@@ -1,0 +1,21 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: auth-service
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+jwt:
+  secret: ${JWT_SECRET:SmartLogixSuperSecretKeyForJWTTokenGeneration2024ChangeInProduction}
+  expiration-ms: ${JWT_EXPIRATION_MS:3600000}
